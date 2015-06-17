@@ -5,14 +5,10 @@
 function boot(el) {
 	var html = require('./templates/populated.html');
 	el.innerHTML = html;
-
-	var  p = el.querySelector('p');
-	p.addEventListener('click', function() {
-		console.log('clicked');
-	}, false);
-
-	console.log(p);
 }
+
+
+
 
 // AMD define for boot.js
 define(function() { return { boot: boot }; });
