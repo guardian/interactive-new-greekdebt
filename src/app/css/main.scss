@@ -13,7 +13,7 @@
 @import 'modules/_side-margins';
 
 // Setup page
-body {
+body, figure {
     margin: 0;
     padding: 0;
 }
@@ -149,6 +149,10 @@ h4 span {
 .credits {
     clear:both;
     padding-top: 12px;
+}
+
+.endresults-title {
+    padding-bottom: 10px;
 }
 
 @media screen and (min-width: 800px) {
