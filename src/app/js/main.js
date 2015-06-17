@@ -3,7 +3,7 @@
  * @param {object:dom} el - <figure> element passed by boot.js. 
  */
 function boot(el) {
-	var html = require('./templates/index.html');
+	var html = require('./templates/populated.html');
 	el.innerHTML = html;
 
 	var  p = el.querySelector('p');

@@ -18,48 +18,32 @@ body {
     padding: 0;
 }
 
-// Remove <figure> margin
-.interactive {
-    margin: 0;
+.choice-wrapper {
+    margin:5px;
+    overflow: hidden;
 }
 
-// Note: Access images using '../app/imgs/' path
-.gv-wrapper {
-    margin: 0 auto;
-    
-    // Breakpoints
-    @include mq(tablet) {
-        max-width: gs-span(9) + $gs-gutter*2;
-    }
-
-    @include mq(desktop) {
-        max-width: gs-span(12) + $gs-gutter*2;
-    }
-
-    @include mq(leftCol) {
-        padding-left: 0;
-        padding-right: 0;
-        max-width: gs-span(14) + $gs-gutter*2;
-    }
-    @include mq(wide) {
-        width: gs-span(16) + $gs-gutter*2;
-        max-width: none;
-    }
+.option-a {
+    float: left;
+    width: 45%;    
 }
 
-.gv-header {
-    padding: 10px $gs-gutter;
-    margin: 0;
-}
-
-.gv-guardian-logo {
+.option-b {
     float: right;
-    width: 80px;
+    width: 45%;    
 }
 
-.gv-table {
-    margin: 10px auto;
-    max-width: 500px;
-    font-family: 'Guardian Text Sans Web', sans-serif;
-    font-size: 0.9rem;
+.option-c {
+    display: none;
+    float: left;
+    width: 45%;    
 }
+
+.endresult {
+    float: left;
+    width:24%;
+    background-color: lightsteelblue;
+}
+
+
+
