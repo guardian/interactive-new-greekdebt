@@ -1,37 +1,60 @@
-var Ractive = require('ractive');
-var getJSON = require('./utils/getjson'); 
-var app;
+define([
+    'reqwest',
+    'json!data/sampleData.json',
+    'text!templates/populated.html'
+], function(
+    reqwest,
+    sampleData,
+    templateHTML
+) {
+   'use strict';
 
-/**
- * Update app using fetched JSON data
- * @param {object:json} data - JSON spreedsheet data.
- */
-function updateView(data) {
-	app.set('games', data.sheets.games);
-}
+    function logResponse(resp) {
+        console.log(resp);
+    }
 
+    function handleRequestError(err, msg) {
+        console.error('Failed: ', err, msg);
+    }
 
-/**
- * Boot the app.
- * @param {object:dom} el - <figure> element passed by boot.js. 
- */
-function boot(el) {
-	app = new Ractive( {
-	    el: el,
-	    template: require('./templates/base.html'),
-	    data: {
-			games: require('./data/data.json')
-		},
-		components: {
-			subView: require('./subView'),
-			socialButtons: require('./components/socialButtons')
-		}
-	});
-	
-	var key = '1hy65wVx-pjwjSt2ZK7y4pRDlX9wMXFQbwKN0v3XgtXM';
-	var url = '//visuals.guim.co.uk/spreadsheetdata/'+key+'.json';
-	getJSON(url, updateView);
-}
+    function afterRequest(resp) {
+        //data = resp.sheets.Sheet1;
+        //console.log(data);
+        //buildFlowchart(data);
+    }
 
-// AMD define for boot.js
-define(function() { return { boot: boot }; });
+    function init (el, context, config, mediator) {
+        // DEBUG: What we get given on boot
+        //console.log(el);
+
+        // DOM template example
+        el.innerHTML = templateHTML;
+
+        // Load local JSON data
+        //console.log(sampleData);
+
+        // Load remote JSON data
+        var key = '1t7W6zInunJpfyFSU8jcGObdDxW2jW1q6B3g3tfipfxU';
+        var url = 'http://interactive.guim.co.uk/spreadsheetdata/'+key+'.json';
+
+        reqwest({
+            url: url,
+            type: 'json',
+            crossOrigin: true
+        })
+        .then(logResponse)
+        .fail(handleRequestError)
+        .always(afterRequest);
+    }
+    
+    function buildFlowchart (data) {
+        
+        
+    }
+    
+    
+
+    return {
+        init: init
+    };
+});
