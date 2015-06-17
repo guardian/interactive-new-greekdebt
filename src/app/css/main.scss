@@ -23,7 +23,54 @@ body {
     overflow: hidden;
 }
 
+.choice-wrapper .date {
+    font-family: "Guardian Egyptian Web";
+    font-weight: 800;
+}
+
+.option {
+    background-color: #4bc6df;
+    margin-bottom: 12px;
+    margin-top: 12px  
+}
+
+.option h4 {
+    padding-left: 12px;
+}
+
+.option p {
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
 .option-a {
+    float: left;
+    width: 100%;    
+}
+
+.option-b {
+    float: left;
+    width: 100%;    
+}
+
+.option-c {
+    display: none;
+    float: left;
+    width: 100%;    
+}
+
+.endresult {
+    float: left;
+    width:24%;
+    background-color: lightsteelblue;
+}
+
+.option {
+    
+}
+
+@media screen and (min-width: 800px) {
+    .option-a {
     float: left;
     width: 45%;    
 }
@@ -34,16 +81,8 @@ body {
 }
 
 .option-c {
-    display: none;
-    float: left;
+    float: right;
     width: 45%;    
 }
-
-.endresult {
-    float: left;
-    width:24%;
-    background-color: lightsteelblue;
 }
-
-
 
