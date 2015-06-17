@@ -21,9 +21,10 @@ body {
 .choice-wrapper {
     margin:5px;
     overflow: hidden;
+    padding-right: 40px;
 }
 
-.choice-wrapper .date {
+.choice-wrapper .date, .endresults-wrapper .date {
     font-family: "Guardian Egyptian Web";
     font-weight: 800;
     margin-top: 12px;
@@ -32,6 +33,10 @@ body {
     width: 100%;
     border-top: 1px solid #dcdcdc;
     font-size: 18px;
+}
+
+.choice {
+    padding-bottom: 15px;
 }
 
 .option {
@@ -95,17 +100,24 @@ body {
     width: 100%;    
 }
 
+.endresults-wrapper {
+    padding-right: 40px;
+}
+
 .endresult {
     float: left;
     width:100%;
-    background-color: #767676;
-    color: #fff
+    background-color: #bdbdbd;
+    color: #fff;
+    margin-bottom: 12px;
+    margin-top: 12px;
+    border-bottom: 3px solid #000;
 }
 
 .endresult h4 {
    padding-left: 12px;
    margin-bottom: 0px;
-    font-family: "Guardian Sans Web";
+    color: #000;
     font-weight: 800;
 }
 
@@ -113,6 +125,13 @@ body {
     padding-left: 12px;
     padding-right: 12px;
      font-family: "Guardian Sans Web";
+}
+
+h4 span {
+    font-size: 14px;
+   
+    font-weight: 600;
+     text-transform: uppercase;
 }
 
 @media screen and (min-width: 800px) {
@@ -129,6 +148,22 @@ body {
 .option-c {
     float: right;
     width: 45%;    
+}
+
+.choice {
+    max-width: 500px;
+}
+
+.endresult {
+width: 45%;
+}
+
+#a1,a3  {
+float: left;
+}
+
+#a2,#a4  {
+float: right;
 }
 }
 
