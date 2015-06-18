@@ -39,6 +39,10 @@ body, figure {
     padding-bottom: 15px;
 }
 
+.past, .option .past p {
+    color: lightgray;
+}
+
 .option {
     
     margin-bottom: 12px;
@@ -92,6 +96,11 @@ body, figure {
      font-family: "Guardian Sans Web";
      color: #333;
 }
+
+.past, .option .past p {
+    color: lightgray !important;
+}
+
 
 .option-a {
     float: left;
@@ -216,7 +225,6 @@ border-top: 1px solid #dcdcdc;
    border-top: none;
    padding-top: 0;
 }
-
 
 .choice {
     padding-top: 10px;
