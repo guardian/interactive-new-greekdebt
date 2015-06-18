@@ -8,7 +8,5 @@ function boot(el) {
 }
 
 
-
-
 // AMD define for boot.js
 define(function() { return { boot: boot }; });
